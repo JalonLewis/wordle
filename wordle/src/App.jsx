@@ -9,23 +9,18 @@ import Navigation from "./components/navigation";
 
 function App() {
   return (
-    <div className="App bg-dark container">
+    <div className="App bg-dark container bg-opacity-25">
       <Routes>
-       <Route path="/" element={<Navigation />}>
-        <Route index element={<Home />}/>
-        <Route  path="/wordle" element={<Wordle />}/>
-        <Route  path="/qourdle" element={<Qourdle />}/>
-        <Route path="/octordle" element={<Octordle />}/>
-       </Route>
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path="/wordle" element={<Wordle />} />
+          <Route path="/qourdle" element={<Qourdle />} />
+          <Route path="/octordle" element={<Octordle />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
-}
-
-{
-  /*Display choices for game variants
-      Change h1 depending on choice and display the corresponding route
-       */
 }
 
 export default App;

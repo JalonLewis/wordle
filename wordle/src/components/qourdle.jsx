@@ -2,14 +2,11 @@ import GuessTracker from "../context/guessTracker.context";
 import Keyboard from "./keyboard";
 
 function Qourdle() {
-
-    return (
-        <div>
-        <h1 className={`text-center text-light`}>Qourdle</h1>
-        <Keyboard />
-        </div>
-    )
-
+  return (
+    <div>
+      <Keyboard guess={"hello"} word={"guess"} />
+    </div>
+  );
 }
 
 export default Qourdle;

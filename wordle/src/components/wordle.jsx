@@ -1,15 +1,17 @@
+import React from "react";
 import GuessTracker from "../context/guessTracker.context";
 import Keyboard from "./keyboard";
+import GuessGrid from "./GuessGrid";
 
 function Wordle() {
-
-    return (
-        <div>
-        <h1 className={`text-center text-light`}>Wordle</h1>
-        <Keyboard />
-        </div>
-    )
-
+  return (
+    <div>
+      {new Array(5).fill().map((_, i) => (
+        <GuessGrid key={i} guess={"hello"} word={"guess"} />
+      ))}
+      <Keyboard guess={"hello"} word={"guess"} />
+    </div>
+  );
 }
 
 export default Wordle;
