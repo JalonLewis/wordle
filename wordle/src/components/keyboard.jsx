@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Keyboard({ usedKeys, guess, guesses, word }) {
+function Keyboard({ usedKeys }) {
   const qwerty = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
   return (
     <div>
