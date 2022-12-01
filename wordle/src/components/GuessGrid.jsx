@@ -1,33 +1,19 @@
-function GuessGrid({ guess, word }) {
+import React from "react";
+import Row from "./guessRow";
+
+function GuessGrid({ guesses, currentGuess, guessCounter, word }) {
   return (
-    <div className="container mb-2 col-5 d-flex justify-content-center">
-      <div className="row">
-        {new Array(5).fill().map((_, i) => {
-          let bgColor = "bg-light";
-          let txtColor = "text-dark";
-          if (guess[i] === word[i]) {
-            bgColor = "bg-success";
-            txtColor = "text-light";
-          } else if (word.includes(guess[i])) {
-            bgColor = "bg-warning";
-            txtColor = "text-light";
-          } else if (!word.includes(guess[i])) {
-            bgColor = "bg-secondary";
-            txtColor = "text-light";
-          }
-          return (
-            <div
-              key={i}
-              className={`d-flex align-items-center justify-content-center text-uppercase border ${txtColor} ${bgColor}`}
-              style={{ width: 60, height: 60 }}
-            >
-              {guess[i]}
-            </div>
-          );
-        })}
-      </div>
+    
+    <div className="card mb-4 border-0 bg-transparent">
+      {guesses.map((guess, index) => {
+        if (guessCounter === index) {
+          return <Row key={index} currentGuess={currentGuess} />;
+        }
+        return <Row key={index} guess={guess} />;
+      })}
     </div>
   );
 }
 
 export default GuessGrid;
+
