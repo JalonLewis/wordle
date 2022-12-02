@@ -19,7 +19,7 @@ function Qourdle(solutionWords) {
     if (solved) {
       window.removeEventListener("keyup", handleKeyup);
     }
-    if (guessCounter > 5) {
+    if (guessCounter > 8) {
       window.removeEventListener("keyup", handleKeyup);
     }
     return () => window.removeEventListener("keyup", handleKeyup);

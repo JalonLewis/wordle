@@ -1,7 +1,5 @@
-import React from "react";
 import { useState } from "react";
-import { useContext } from "react";
-import words from "../../words.json";
+import dictionary from "../../dictionary.json";
 
 const GameStats = (word) => {
   let [guessCounter, setGuessCounter] = useState(0);
@@ -88,10 +86,10 @@ const GameStats = (word) => {
 
   function handleKeyup({ key }) {
     if (key === "Enter") {
-      if (guessCounter > 5) {
+      if (pastGuesses.includes(currentGuess)) {
         return;
       }
-      if (pastGuesses.includes(currentGuess)) {
+      if (!dictionary.includes(currentGuess.toUpperCase())) {
         return;
       }
       if (currentGuess.length != 5) {
