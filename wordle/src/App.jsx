@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigation />}>
             <Route index element={<Home />} />
-            <Route path="/wordle" element={<Wordle solutionWords={solutionWords[0]} />} />
+            <Route path="/wordle" element={<Wordle solutionWords={solutionWords} />} />
             <Route path="/qourdle" element={<Qourdle solutionWords={solutionWords} />} />
             <Route path="/octordle" element={<Octordle solutionWords={solutionWords} />} />
           </Route>
