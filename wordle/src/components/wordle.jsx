@@ -10,14 +10,13 @@ import ModalFooter from "react-bootstrap/ModalFooter";
 import ModalTitle from "react-bootstrap/ModalTitle";
 
 function Wordle(solutionWords) {
-  console.log(solutionWords.solutionWords[0]);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/");
     navigate(0);
   };
-
-  const [showModal, setShowModal] = useState(false);
+  
   const {
     currentGuess,
     handleKeyup,
@@ -46,12 +45,9 @@ function Wordle(solutionWords) {
         guesses={wordleGuesses}
         currentGuess={currentGuess}
         guessCounter={guessCounter}
-        word={solutionWords.solutionWords[0]}
       />
       <Keyboard
         usedKeys={usedKeys}
-        guesses={wordleGuesses}
-        word={solutionWords.solutionWords[0]}
       />
       <Modal show={showModal && solved}>
         <ModalHeader>

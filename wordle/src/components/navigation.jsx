@@ -24,7 +24,6 @@ function Navigation() {
 
   const handleTitleClick = () => {
     setShowModal(true)
-    console.log(showModal)
   };
 
   if (useLocation().pathname.includes("wordle")) {

@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "./guessRow";
 
-function GuessGrid({ guesses, currentGuess, guessCounter, word }) {
+function GuessGrid({ guesses, currentGuess, guessCounter }) {
   return (
     
     <div className="card mb-4 border-0 bg-transparent">

@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 function Keyboard({ usedKeys }) {
   const qwerty = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
   return (
